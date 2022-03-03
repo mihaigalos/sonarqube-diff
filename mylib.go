@@ -14,7 +14,7 @@ func get_map_metadata(url string) map[string]string {
 		os.Exit(1)
 	}
 	doc := soup.HTMLParse(resp)
-	fmt.Println(doc.Find("title").Text())
+
 	rows := doc.Find("div", "class", "detail").Find("table").Find("tbody").FindAll("tr")
 
 	pos_rule := 0
@@ -54,6 +54,16 @@ func Diff(url_A string, url_B string) map[string]string {
 
 	additions := diff(data_A, data_B)
 
-	fmt.Println(additions)
 	return additions
+}
+
+func DiffToCSV(url_A string, url_B string) {
+
+	additions := Diff(url_A, url_B)
+
+	for k, v := range additions {
+		fmt.Print(k)
+		fmt.Print(",")
+		fmt.Println(v)
+	}
 }

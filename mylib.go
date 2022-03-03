@@ -35,10 +35,24 @@ func get_map_metadata(url string) map[string]string {
 	return data
 }
 
-func Run(url_A string) {
+func diff(data_A map[string]string, data_B map[string]string) map[string]string {
+	additions := make(map[string]string)
+	for k, v := range data_B {
+		_, ok := data_A[k]
+
+		if !ok {
+			additions[k] = v
+		}
+	}
+	return additions
+}
+
+func Run(url_A string, url_B string) {
 
 	data_A := get_map_metadata(url_A)
-	data_B := get_map_metadata(url_A)
-	fmt.Println(data_A)
-	fmt.Println(data_B)
+	data_B := get_map_metadata(url_B)
+
+	additions := diff(data_A, data_B)
+
+	fmt.Println(additions)
 }

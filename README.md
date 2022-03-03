@@ -16,5 +16,5 @@ docker run --rm -it mihaigalos/sonarkube-diff url_A urlB # Point these URLs to c
 ### Example
 
 ```bash
-just docker_run https://raw.githubusercontent.com/mihaigalos/sonarqube-diff/main/data_example/demo_baseline.html https://raw.githubusercontent.com/mihaigalos/sonarqube-diff/main/data_example/demo_baseline_3additions.html
+docker run --rm -it mihaigalos/sonarkube-diff https://raw.githubusercontent.com/mihaigalos/sonarqube-diff/main/data_example/demo_baseline.html https://raw.githubusercontent.com/mihaigalos/sonarqube-diff/main/data_example/demo_baseline_3additions.html
 ```

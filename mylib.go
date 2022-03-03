@@ -7,10 +7,9 @@ import (
 	"github.com/anaskhan96/soup"
 )
 
-func Run(url_A string) {
-
-	data_A := make(map[string]string)
-	resp, err := soup.Get(url_A)
+func get_map_metadata(url string) map[string]string {
+	data := make(map[string]string)
+	resp, err := soup.Get(url)
 	if err != nil {
 		os.Exit(1)
 	}
@@ -26,8 +25,16 @@ func Run(url_A string) {
 
 		e := file + "," + line + "," + rule
 
-		data_A[key] = e
-
+		data[key] = e
 	}
+
+	return data
+}
+
+func Run(url_A string) {
+
+	data_A := get_map_metadata(url_A)
+	data_B := get_map_metadata(url_A)
 	fmt.Println(data_A)
+	fmt.Println(data_B)
 }

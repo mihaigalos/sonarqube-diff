@@ -22,12 +22,8 @@ func Run(url string) {
 		line := row.FindAll("td")[3].Text()
 		rule := row.FindAll("td")[0].Find("a").Text()
 
-		fmt.Print(file)
-		fmt.Print(",")
-		fmt.Print(line)
-		fmt.Print(",")
-		fmt.Print(rule)
+		e := file + "," + line + "," + rule
 
-		fmt.Println()
+		fmt.Println(e)
 	}
 }

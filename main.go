@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	run("https://github.com/soprasteria/sonar-report/blob/master/samples/sonarcloud_java-tomcat.html")
+	Run("https://raw.githubusercontent.com/soprasteria/sonar-report/master/samples/sonarcloud_java-tomcat.html")
 }

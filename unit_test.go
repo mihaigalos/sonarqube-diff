@@ -1,13 +1,16 @@
 package main
 
-import "testing"
+import (
+	"testing"
 
-func TestAddWorks_whenTypical(t *testing.T) {
-	expected := 3
+	"github.com/stretchr/testify/assert"
+)
 
-	actual := Add(1, 2)
+func TestGenesis_whenTypical(t *testing.T) {
+	diff := Diff("https://raw.githubusercontent.com/mihaigalos/sonarqube-diff/main/data_example/demo_baseline.html", "https://raw.githubusercontent.com/mihaigalos/sonarqube-diff/main/data_example/demo_baseline_3additions.html")
 
-	if actual != expected {
-		t.Errorf("No Match: %d != %d", actual, expected)
-	}
+	assert.Contains(t, diff, "AWK40HIg-pl6AHs22K6U-manually-added")
+	assert.Contains(t, diff, "AWK40IH6-pl6AHs22Mgc-manually-added")
+	assert.Contains(t, diff, "AWK40INQ-pl6AHs22Mod-manually-added")
+
 }

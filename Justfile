@@ -10,6 +10,8 @@ docker_image := docker_user_repo + "/" + tool + ":" + version
 dockerize:
     docker build -t {{docker_image}} .
 
-run_docker url_A url_B:
+docker_run url_A url_B:
     docker run --rm -it {{ docker_image }} {{ url_A }} {{ url_B }}
 
+docker_push:
+    docker push {{ docker_image }}

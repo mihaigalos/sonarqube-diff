@@ -3,11 +3,12 @@ _default:
 
 
 tool := "sonarkube-diff"
-version := "0.0.1"
+version := "latest"
 docker_user_repo := "mihaigalos"
 docker_image := docker_user_repo + "/" + tool + ":" + version
 
 dockerize:
+    docker build -t {{docker_image}} .
     docker build -t {{docker_image}} .
 
 docker_run url_A url_B:

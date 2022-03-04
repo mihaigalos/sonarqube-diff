@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGenesis_whenTypical(t *testing.T) {
+func TestWorks_whenTypical(t *testing.T) {
 	diff := Diff("https://raw.githubusercontent.com/mihaigalos/sonarqube-diff/main/data_example/demo_baseline.html", "https://raw.githubusercontent.com/mihaigalos/sonarqube-diff/main/data_example/demo_baseline_3additions.html")
 
 	assert.Contains(t, diff, "AWK40HIg-pl6AHs22K6U-manually-added")

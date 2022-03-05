@@ -12,5 +12,4 @@ func TestWorks_whenTypical(t *testing.T) {
 	assert.Contains(t, diff, "AWK40HIg-pl6AHs22K6U-manually-added")
 	assert.Contains(t, diff, "AWK40IH6-pl6AHs22Mgc-manually-added")
 	assert.Contains(t, diff, "AWK40INQ-pl6AHs22Mod-manually-added")
-
 }

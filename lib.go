@@ -48,7 +48,6 @@ func diff(data_A map[string]string, data_B map[string]string) map[string]string 
 }
 
 func Diff(url_A string, url_B string) map[string]string {
-
 	data_A := get_map_metadata(url_A)
 	data_B := get_map_metadata(url_B)
 
@@ -58,7 +57,6 @@ func Diff(url_A string, url_B string) map[string]string {
 }
 
 func DiffToCSV(url_A string, url_B string) {
-
 	additions := Diff(url_A, url_B)
 
 	for k, v := range additions {
